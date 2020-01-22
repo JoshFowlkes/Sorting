@@ -3,13 +3,12 @@ def selection_sort( arr ):
     ''' Find the lowest element, and switch places with its place in the sequence '''
     # loop through n-1 elements
     for i in range(len(arr)-1):
-        min_pos  = i
-        for j in range(i, len(arr)):
-            if arr[j] < arr[min_pos]:
-                min_pos = j
-        temp = arr[i]
-        arr[i] = arr[min_pos]
-        arr[min_pos] = temp
+        cur_index  = i
+        smallest_index = cur_index
+        for j in range(cur_index, len(arr)):
+            if arr[j] < arr[smallest_index]:
+                smallest_index = j
+        arr[smallest_index], arr[cur_index] = ar[cur_index], arr[smallest_index]
 
         print(arr)
 
